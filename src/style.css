@@ -1,0 +1,359 @@
+:root {
+  --bg-page: #f3f4f6;
+  --surface: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
+  --border-thin: #6b7280;
+  --border-thick: #000000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Verdana, Geneva, 'Segoe UI', Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+/* Control Panel Styling (Screen Only) */
+.control-panel {
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  background: var(--surface);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.control-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 1.25rem;
+}
+
+.control-header h1 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  align-items: end;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.control-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.control-group input[type='text'],
+.control-group input[type='number'],
+.control-group select {
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #fff;
+  color: var(--text-main);
+}
+
+.checkbox-group {
+  justify-content: center;
+  padding-bottom: 0.4rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem !important;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+}
+
+/* Print Preview Container on Screen */
+.print-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.print-page {
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 16mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 1 Puzzle Per Page (Extra Large Print for Dementia/Low Vision) */
+.page-single {
+  justify-content: center;
+  align-items: center;
+}
+
+.page-single .puzzle-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.page-single .puzzle-pack-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+.page-single .puzzle-meta {
+  font-size: 1.15rem;
+  color: #333;
+  text-align: center;
+  margin-top: 0.35rem;
+}
+
+.page-single .sudoku-cell {
+  width: 18.5mm;
+  height: 18.5mm;
+  font-size: 28pt;
+}
+
+.page-single .puzzle-card-footer {
+  font-size: 1.05rem;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* 2 Puzzles Per Page */
+.page-double {
+  justify-content: space-around;
+  align-items: center;
+  gap: 10mm;
+}
+
+.page-double .puzzle-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.page-double .puzzle-pack-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.page-double .puzzle-meta {
+  font-size: 0.95rem;
+  color: #333;
+  text-align: center;
+}
+
+.page-double .sudoku-cell {
+  width: 12.2mm;
+  height: 12.2mm;
+  font-size: 19pt;
+}
+
+.page-double .puzzle-card-footer {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+/* Sudoku Grid Table */
+.sudoku-grid {
+  border-collapse: collapse;
+  border: 3.5px solid var(--border-thick);
+  background: #ffffff;
+}
+
+.sudoku-cell {
+  border: 1px solid var(--border-thin);
+  text-align: center;
+  vertical-align: middle;
+  font-weight: 700;
+  color: #000000;
+  user-select: none;
+}
+
+/* Thick 3x3 Box Borders */
+.sudoku-cell.box-top {
+  border-top: 3px solid var(--border-thick);
+}
+
+.sudoku-cell.box-bottom {
+  border-bottom: 3.5px solid var(--border-thick);
+}
+
+.sudoku-cell.box-left {
+  border-left: 3px solid var(--border-thick);
+}
+
+.sudoku-cell.box-right {
+  border-right: 3.5px solid var(--border-thick);
+}
+
+/* Answer Key Styling */
+.page-solutions {
+  justify-content: flex-start;
+  gap: 12mm;
+}
+
+.solutions-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.solutions-header h2 {
+  font-size: 1.4rem;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12mm 10mm;
+  justify-items: center;
+}
+
+.solution-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.solution-label {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.page-solutions .sudoku-cell {
+  width: 8.2mm;
+  height: 8.2mm;
+  font-size: 12pt;
+}
+
+.cell-answer {
+  font-weight: 400;
+  color: #374151;
+}
+
+/* Print Media Rules */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-container {
+    padding: 0;
+    gap: 0;
+  }
+
+  .print-page {
+    width: 100%;
+    min-height: 0;
+    height: 275mm;
+    box-shadow: none;
+    padding: 4mm 6mm;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Sudoku Pack Generator</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Top Control Panel (Hidden when printing) -->
+    <header class="control-panel no-print">
+      <div class="control-header">
+        <div>
+          <h1>Weekly Sudoku Pack Generator</h1>
+          <p class="subtitle">
+            Large-print, high-contrast puzzles with guaranteed single-step logic (no frustrating dead ends).
+          </p>
+        </div>
+        <div class="action-buttons">
+          <button id="btn-generate" class="btn btn-secondary" type="button">
+            Generate New Pack
+          </button>
+          <button id="btn-print" class="btn btn-primary" type="button">
+            Print / Save as PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="controls-grid">
+        <div class="control-group">
+          <label for="input-title">Pack Title / Header</label>
+          <input
+            id="input-title"
+            type="text"
+            value="Mom's Weekly Sudoku"
+            placeholder="e.g., Mom's Weekly Sudoku"
+          />
+        </div>
+
+        <div class="control-group">
+          <label for="select-difficulty">Difficulty Level</label>
+          <select id="select-difficulty">
+            <option value="gentle">Gentle (44–48 clues, direct singles only)</option>
+            <option value="easy" selected>Easy (38–42 clues, classic relaxing)</option>
+            <option value="medium">Medium (33–36 clues, engaging)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="input-count">Number of Puzzles</label>
+          <input id="input-count" type="number" min="1" max="30" value="10" />
+        </div>
+
+        <div class="control-group">
+          <label for="select-layout">Print Layout</label>
+          <select id="select-layout">
+            <option value="1-per-page" selected>1 Puzzle per Page (Extra-Large Print)</option>
+            <option value="2-per-page">2 Puzzles per Page (Standard Large)</option>
+          </select>
+        </div>
+
+        <div class="control-group checkbox-group">
+          <label class="checkbox-label">
+            <input id="check-solutions" type="checkbox" checked />
+            <span>Include Answer Key at end of printout</span>
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <!-- Printable Document Area -->
+    <main id="print-container" class="print-container layout-1-per-page"></main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
