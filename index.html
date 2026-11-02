@@ -32,23 +32,32 @@
           <input
             id="input-title"
             type="text"
-            value="Mom's Weekly Sudoku"
-            placeholder="e.g., Mom's Weekly Sudoku"
+            value="Судоку для мамы"
+            placeholder="e.g., Судоку для мамы / Mom's Weekly Sudoku"
           />
+        </div>
+
+        <div class="control-group">
+          <label for="select-lang">Printout Language (for Mom)</label>
+          <select id="select-lang">
+            <option value="ru" selected>Русский (Russian)</option>
+            <option value="en">English</option>
+          </select>
         </div>
 
         <div class="control-group">
           <label for="select-difficulty">Difficulty Level</label>
           <select id="select-difficulty">
             <option value="gentle">Gentle (44–48 clues, direct singles only)</option>
-            <option value="easy" selected>Easy (38–42 clues, classic relaxing)</option>
-            <option value="medium">Medium (33–36 clues, engaging)</option>
+            <option value="easy">Easy (38–42 clues, classic relaxing)</option>
+            <option value="medium" selected>Medium (33–36 clues, engaging)</option>
+            <option value="hard">Challenging (28–31 clues, accountant level)</option>
           </select>
         </div>
 
         <div class="control-group">
           <label for="input-count">Number of Puzzles</label>
-          <input id="input-count" type="number" min="1" max="30" value="10" />
+          <input id="input-count" type="number" min="1" max="30" value="8" />
         </div>
 
         <div class="control-group">
